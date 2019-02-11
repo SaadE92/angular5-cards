@@ -1,0 +1,22 @@
+<div class="container">
+  <mat-card *ngFor="let kpi of kpis" class="example-card">
+      <div class="container">
+        <div class="inner-container">
+          <mat-card-header class="kpi">
+              <mat-card-title>14</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="kpi">
+              <mat-progress-spinner *ngIf="kpi.label != 'clients'"
+                    strokeWidth="4" 
+                    value="80" 
+                    [color]="kpi.color"
+                    mode="determinate" 
+                    diameter="60">
+                </mat-progress-spinner>
+                <span class="percentage" *ngIf="kpi.label != 'clients'">20%</span>
+          </mat-card-content>
+        </div>
+          <mat-card-subtitle class="kpi">{{kpi.label}}</mat-card-subtitle>
+      </div>
+  </mat-card>
+</div>
